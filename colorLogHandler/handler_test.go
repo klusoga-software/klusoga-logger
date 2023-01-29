@@ -26,28 +26,28 @@ func TestHandler(t *testing.T) {
 
 	slog.Error("An Error occurred", errors.New("test"))
 
-	if writer.Buffer.String() != colors.Red+" Level=\"ERROR\" Message=\"An Error occurred\" err=\"test\" "+colors.Clear {
+	if writer.Buffer.String() != colors.Red+" Level=\"ERROR\" Message=\"An Error occurred\" err=\"test\" "+colors.Clear+"\n" {
 		t.Log(writer.Buffer.String())
 		t.Fail()
 	}
 
 	slog.Info("This is an Info")
 
-	if writer.Buffer.String() != colors.Green+" Level=\"INFO\" Message=\"This is an Info\"  "+colors.Clear {
+	if writer.Buffer.String() != colors.Green+" Level=\"INFO\" Message=\"This is an Info\"  "+colors.Clear+"\n" {
 		t.Log(writer.Buffer.String())
 		t.Fail()
 	}
 
 	slog.Debug("This is a debug message", "os", "mac")
 
-	if writer.Buffer.String() != colors.Blue+" Level=\"DEBUG\" Message=\"This is a debug message\" os=\"mac\" "+colors.Clear {
+	if writer.Buffer.String() != colors.Blue+" Level=\"DEBUG\" Message=\"This is a debug message\" os=\"mac\" "+colors.Clear+"\n" {
 		t.Log(writer.Buffer.String())
 		t.Fail()
 	}
 
 	slog.Warn("This is a warning")
 
-	if writer.Buffer.String() != colors.Yellow+" Level=\"WARN\" Message=\"This is a warning\"  "+colors.Clear {
+	if writer.Buffer.String() != colors.Yellow+" Level=\"WARN\" Message=\"This is a warning\"  "+colors.Clear+"\n" {
 		t.Log(writer.Buffer.String())
 		t.Fail()
 	}
