@@ -3,8 +3,8 @@ package handler
 import (
 	"bytes"
 	"errors"
+	"github.com/klusoga-software/klusoga-logger/colors"
 	"golang.org/x/exp/slog"
-	"klusoga-logger/colors"
 	"testing"
 )
 

@@ -3,9 +3,9 @@ package handler
 import (
 	"context"
 	"fmt"
+	"github.com/klusoga-software/klusoga-logger/colors"
 	"golang.org/x/exp/slog"
 	"io"
-	"klusoga-logger/colors"
 )
 
 type colorLogHandler struct {
