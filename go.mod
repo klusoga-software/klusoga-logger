@@ -1,4 +1,4 @@
-module klusoga-logger
+module github.com/klusoga-software/klusoga-logger
 
 go 1.19
 
