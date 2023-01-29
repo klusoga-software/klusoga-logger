@@ -1,4 +1,4 @@
-package handler
+package colorLogHandler
 
 import (
 	"context"
@@ -45,7 +45,7 @@ func (c *colorLogHandler) Handle(r slog.Record) error {
 		attributes += "\"" + attr.Value.String() + "\""
 	})
 
-	_, err := c.writer.Write([]byte(fmt.Sprintf("%s Level=\"%s\" Message=\"%s\" %s %s", colorPrefix, r.Level.String(), r.Message, attributes, colors.Clear)))
+	_, err := c.writer.Write([]byte(fmt.Sprintf("%s Level=\"%s\" Message=\"%s\" %s %s\n", colorPrefix, r.Level.String(), r.Message, attributes, colors.Clear)))
 	if err != nil {
 		return err
 	} else {
